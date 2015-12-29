@@ -1,6 +1,6 @@
 {
-    "name": "opauth/live",
-    "description": "Live Connect strategy for Opauth",
+    "name": "claromentis/opauth-live",
+    "description": "Windows Live Connect strategy for Opauth",
     "keywords": ["authentication", "auth", "live", "live connect", "windows", "microsoft", "windows live", "passport"],
     "homepage": "http://opauth.org",
     "license": "MIT",
@@ -17,8 +17,11 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "opauth/opauth": "~1.0"
+        "claromentis/opauth": "^1.0"
     },
+	"replace": {
+	    "opauth/live": "1.x"
+	},
     "autoload": {
         "psr-4": {
             "Opauth\\Live\\Strategy\\": "src"
