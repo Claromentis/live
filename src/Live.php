@@ -93,7 +93,7 @@ class Live extends AbstractStrategy
         );
         $params = $this->addParams(array('client_id', 'client_secret', 'state'), $params);
 
-        $this->http->setFormUrlencoded();
+        $this->http->setContentType(\GuzzleHttp\RequestOptions::FORM_PARAMS);
         $response = $this->http->post($url, $params);
 
         $results = json_decode($response);
