@@ -93,6 +93,7 @@ class Live extends AbstractStrategy
         );
         $params = $this->addParams(array('client_id', 'client_secret', 'state'), $params);
 
+        $this->http->setFormUrlencoded();
         $response = $this->http->post($url, $params);
 
         $results = json_decode($response);
