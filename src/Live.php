@@ -93,7 +93,10 @@ class Live extends AbstractStrategy
         );
         $params = $this->addParams(array('client_id', 'client_secret', 'state'), $params);
 
-        $this->http->setContentType(\GuzzleHttp\RequestOptions::FORM_PARAMS);
+        if ($this->http instanceof Opauth\Opauth\HttpClient\Guzzle) {
+            $this->http->setContentType(\GuzzleHttp\RequestOptions::FORM_PARAMS);
+        }
+
         $response = $this->http->post($url, $params);
 
         $results = json_decode($response);
